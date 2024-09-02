@@ -1,0 +1,222 @@
+<!doctype html>
+
+<html>
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Marvel&display=swap" rel="stylesheet">
+
+<head>
+	<meta name="viewport" content="width = device-width, initital-scale=1">
+	<title>Sports</title>
+</head>
+
+<body bgcolor="000000">
+
+<nav>
+	<ul>
+		<li><a href="#">Portfolio 📁</a>
+			<ul>
+				<li><a href="rakimtr.html">Biography</a>
+				<li><a href="sports.html">Sports</a></li>
+				<li><a href="business.html">Business</a></li>
+				<li><a href="psychology.html">Psychology</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+ }
+ 
+ul  { 
+
+ }
+ 
+ul li { 
+
+ }
+ 
+ul li a {
+		 text-decoration: none;
+
+ }
+
+nav {
+	width: 100%;
+	height: 60px;
+	background-color: #000000;
+
+ }
+
+nav p {
+	  
+	  font-size: 24px;
+	  line-height: 55px;
+	  float: left;
+	  padding: 0px 20px;
+	  
+ }
+
+nav ul { 
+	  
+	  float: left;
+ }
+
+nav ul li {
+	     float: left;
+	     list-style: none;
+		 position: relative;
+		   
+ } 
+ 
+nav ul li a {
+			 display: block;
+             color: #FFFFFF;
+			 font-size: 14px;
+			 padding: 22px 14px;
+			 text-decoration: none;
+			 
+ }
+
+nav ul li ul {
+              
+			  display: none; 
+			  position: absolute;
+			  background-color: #000000;
+			  padding: 10px;
+			  border-radius: 0px 0px 4px 4px;
+ }
+
+nav ul li:hover ul {
+			  display: block; 
+
+ } 
+
+nav ul li ul li {
+			  width: 180px
+			  border-radius: 4px;
+}
+
+
+nav ul li ul li a {
+			  padding: 8px 14px;
+}
+
+nav ul li ul li a:hover {
+              background-color: #000000;
+			
+ }
+ 
+
+a  {
+	font-family: righteous, cursive;
+
+}
+
+h1 {
+	font-size: 25px;
+	font-family: righteous, cursive;
+}
+
+h2 {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+iframe {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+h3 {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: righteous;
+	padding: 8px 14px;
+}
+
+h4 {
+	margin-top: 15px;
+	font-size: 15px;
+	font-family: calibri;
+	padding: 8px 14px
+}
+
+h5 {
+	margin-top: 15px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+p {
+	margin-top: 15px;
+	font-size: 30px;
+	font-family: righteous, cursive;
+}
+
+</style>
+
+
+<center><h2 style="color:white"><p>NBA Player Performance 🏀</p><BR> 
+In this project I've conjured up a dynamic projection workbook that, ultimately, projects NBA Player performance using a plethora of formulas. <BR> 
+This workbook allows all of my NBA Fantasy clients to make data-driven decisions when creating their fantasy lineups.<BR>
+Being that it's not basketball season at the moment, my live workbook isn't able to update properly.<BR> 
+So for example purposes, I'll be using an old projection workbook to display here on the webpage.<BR>
+Below the projection workbook you can find detailed descriptions about each sheet.<BR>
+The workbook is interactive, so you can click on the cells to view their contents.<BR>
+If you'd like to inspect all formulas, just use the shortcut <mark>CTRL + ~</mark><BR></h2></center>
+
+<div class="responsive-iframe-container"><center><iframe src="https://docs.google.com/spreadsheets/d/1Cl9Y3QpBdR0D5MWkdqmwXFZmpm11UrKUo-fVFaNBM9E/edit?usp=sharing" frameborder="0" width="100%" height="500"></iframe></center></div>
+
+<h3 style="color:white">Per_Pos<BR></h3>
+<h4 style="color:white">On the Per_Pos sheet, I use the <mark>=IMPORTHTML("url", "table", 0)</mark> formula to index a table containing each NBA players Per 100 Possessions stats from basketballreference.com.<BR>
+Using these stats are a much more predictive approach than using Per Game. Essentially, they are the same stats as Per Game stats except instead of taking a player's totals and dividing them by games, you take their totals and divide it by the amount of possessions.<BR>
+Since im importing the basketballreference's url, this sheet updates whenever basketballreference updates.<BR>
+Scrolling all the way to the right of the sheet, you will see a column labeled "Average Fantasy Points Per 100 Pos".<BR>
+The values in this column are calculated using the paramaters in DraftKings scoring formula:<BR></h4>
+
+<center><h5 style="color:white">Point +1<BR>
+Made 3pt Shot +0.5<BR>
+Rebound +1.25<BR>
+Assist +1.5<BR>
+Steal +2<BR>
+Block +2<BR>
+Turnover -0.5<BR></h5></center>
+
+<center><h4 style="color:white">These parameters are multiplied by each players' respective stat.<BR>
+The formula reads:<mark>(AC2*1) +(L2*0.5)+(W2*1.25)+(X2*1.5)+(Y2*2)+(Z2*2)+(AA2*-0.5)</mark></h4></center>
+
+
+<h3 style="color:white">Salaries<BR></h3>
+<h4 style="color:white">On the Salaries sheet, I have player fantasy data that I downloaded from the DraftKings website in the form of a csv file. I then upload the csv file onto the sheet.<BR>
+Here I am able to index the players' respective fantasy salaries, and fantasy positions. Later, these categories will help evaluate the cost-effectiveness of each player.<BR></h4>
+
+<h3 style="color:white">Possessions<BR></h3>
+<h4 style="color:white">On the Possessions sheet, I use the <mark>=IMPORTHTML("url", "table", 0)</mark> formula to index a table containing each NBA teams total Possessions Per Game from teamrankings.com.<BR>
+Since im importing the teamrankings's url, this sheet updates whenever teamrankings updates.<BR></h4>
+
+
+<h3 style="color:white">Minutes<BR></h3>
+<h4 style="color:white">On the Minutes sheet, I use the <mark>=IMPORTHTML("url", "table", 0)</mark> formula to index a table containing each NBA player's projected minutes for the day from numberfire.com.<BR>
+Projected Minutes is an important aspect of an NBA players game. No matter how good your favorite player is, at the very least they will not reach their average performance if they are on limited minutes.<BR> 
+numberfire.com does a fantastic job at projecting how many minutes a player will play on any given night.<BR>
+Since im importing the numberfire's url, this sheet updates whenever numberfire updates.</h4>
+
+<h3 style="color:white">Analysis<BR></h3>
+<h4 style="color:white">On the Analysis sheet, I am computing predictive statistics using values indexed from the previous sheets listed above.<BR>
+For the columns "Position", "Salary", "Proj Minutes", "Team", "Opponent", "Team Possessions", "Opponent Possessions", and "Avg FP Points Per 100 Pos", I am using the <mark>=INDEX(reference, [row], [column])</mark> formula to index values from my previous sheets.<BR>
+In my opinion, this is a great alternative to the <mark>=VLOOKUP(search_key, range, index, [is_sorted])</mark> function as vlookup is not only a limited function, but the criterions can also be a bit confusing.<BR>
+For the "Proj Player Possessions" values, I am projecting each players possessions for the day. I do this by first dividing each players projected minutes by 48 as there are roughly 48 total minutes in a single game. I then multiply this result by the average of each players team and opponent possessions. That calculation takes the form of: <mark>=(D3/48)*(AVERAGE(G3:H3))</mark><BR>
+Moving on to the "Proj FP" values. This column holds each players projected fantasy points for the day. These are calculated by first dividing each players projected player possessions by 100. This is because there are roughly 100 possessions in a single game. I then multiply this by each players average fantasy points per 100 possessions. The formula comes out as:<mark>=(J2/100)*I2</mark><BR>
+Last but not least is the "Cost Effectiveness" column. These values allow my clients to determine which players are the most valuable for the day.<BR>
+These values are calculated by taking each players salary and dividing them by a bases of 1000, since every salary is in the thousands. That result then gets divided further by each players projected fantasy points. Here's the formula: <mark>=K2/(C2/1000)</mark><BR>
+They are then conditionally formatted to give the values a more intuitive feel.<BR></h4>
+
+
+</body>
+
+</html>

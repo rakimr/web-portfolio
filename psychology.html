@@ -1,0 +1,242 @@
+<!doctype html>
+
+<html>
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Marvel&display=swap" rel="stylesheet">
+
+<head>
+	<meta name="viewport" content="width = device-width, initital-scale=1.0">
+	<title>Psychology</title>
+</head>
+
+<body bgcolor="000000">
+
+<nav>
+	<ul>
+		<li><a href="#">Portfolio 📁</a>
+			<ul>
+				<li><a href="rakimtr.html">Biography</a>
+				<li><a href="sports.html">Sports</a></li>
+				<li><a href="business.html">Business</a></li>
+				<li><a href="psychology.html">Psychology</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<style>
+
+* {
+	margin: 0;
+	padding: 0;
+ }
+ 
+ul  { 
+
+ }
+ 
+ul li { 
+
+ }
+ 
+ul li a {
+		 text-decoration: none;
+
+ }
+
+nav {
+	width: 100%;
+	height: 60px;
+	background-color: #000000;
+
+ }
+
+nav p {
+	  
+	  font-size: 24px;
+	  line-height: 55px;
+	  float: left;
+	  padding: 0px 20px;
+	  
+ }
+
+nav ul { 
+	  
+	  float: left;
+ }
+
+nav ul li {
+	     float: left;
+	     list-style: none;
+		 position: relative;
+		   
+ } 
+ 
+nav ul li a {
+			 display: block;
+             color: #FFFFFF;
+			 font-size: 14px;
+			 padding: 22px 14px;
+			 text-decoration: none;
+			 
+ }
+
+nav ul li ul {
+              
+			  display: none; 
+			  position: absolute;
+			  background-color: #000000;
+			  padding: 10px;
+			  border-radius: 0px 0px 4px 4px;
+ }
+
+nav ul li:hover ul {
+			  display: block; 
+
+ } 
+
+nav ul li ul li {
+			  width: 180px
+			  border-radius: 4px;
+}
+
+
+nav ul li ul li a {
+			  padding: 8px 14px;
+}
+
+nav ul li ul li a:hover {
+              background-color: #000000;
+			
+ }
+ 
+
+a  {
+	font-family: righteous, cursive;
+
+}
+
+h1 {
+	font-size: 25px;
+	font-family: righteous, cursive;
+}
+
+h2 {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+iframe {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+h3 {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: righteous;
+	padding: 8px 14px;
+}
+
+h4 {
+	margin-top: 15px;
+	font-size: 15px;
+	font-family: calibri;
+	padding: 8px 14px
+}
+
+h5 {
+	margin-top: 15px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+p {
+	margin-top: 15px;
+	font-size: 30px;
+	font-family: righteous, cursive;
+}
+
+</style>
+
+
+<center><h2 style="color:white"><p>Personality Test 👥</p><BR> 
+This project is about Robert S. Woodworth's "Personal Data Sheet." It is widely known as the "first personality test."<BR>
+It was originally created to screen US Army soldiers for PTSD risks in the early 1900's with 116 yes or no questions.<BR>
+In recent years the test was replicated by a data scientist named Yam Peleg.<BR> 
+He was able to gather responses after creating an interactive version. <BR>
+About 5800 anonymous answers were recorded and published on Kaggle. <BR> 
+My workbook is linked below with explanations of each sheet.<BR></h2></center>
+
+<iframe src="https://docs.google.com/spreadsheets/d/1g1S6Ed32wSrKV6Jdv8pq4QeRzStVMYp0427u1ZMFtkU/edit?usp=sharing" frameborder="0" width="100%" height="630"></iframe>
+
+
+<h3 style="color:white">Test<BR></h3>
+<h4 style="color:white">The Test sheet consists of all anonymous respondents and their answers to each question.<BR>
+Since the answers were either Yes or No, they were able to be binarily coded into 1's and 2's.<BR>
+Scrolling all the way to the right, you can find the "Age" "Gender" and "Country" columns.<BR></h4>
+
+
+<h3 style="color:white">Data<BR></h3>
+<h4 style="color:white">On the Data sheet, I've compiled two tables.<BR> 
+The first table consists of the Total number of participants who identify as Male or Female, sub categoried into 4 generations (Gen Z, Millenials, Gen X, and Boomers).<BR>
+The second table consists of the Total number of American participants who identify as Male or Female, sub categoried into the same 4 generations.<BR>
+Sourcing the raw gender data from the "Test" sheet, I was able to use <mark>=COUNTIF(range, criterion)</mark> to count how many respondents identified as Male or Female.<BR>
+To count each Male or Female by generation, I used <mark>=COUNTIFS(criteria_range1, criterion1, [criteria_range2, …], [criterion2, …])</mark> to add age as a criteria.<BR>
+I used Beresford's Research's "Age Range by Generation" scale to determine generation.</h4>
+
+<h3 style="color:white">Generation Response Sheets<BR></h3>
+<h4 style="color:white"> The Generation Response Sheets consist of the first 74 questions of the personality test, and the percentage of each yes/no response from each American Male/Female gender.<BR>
+The code to retrieve the Yes response percentage for each question from Male/Female respondents, respective to their generations, read:<BR> 
+<h5 style="color:white"><center>GenZ Male: <mark>=COUNTIFS(Test!$DN:$DN, 1, Test!$DO:$DO, "US", Test!$DM:$DM, "<26", Test!A:A, 1)/Data!$D$11</mark><BR></center>
+<center>GenZ Female: <mark>=COUNTIFS(Test!$DN:$DN, 2, Test!$DO:$DO, "US", Test!$DM:$DM, "<26", Test!A:A, 1)/Data!$D$12</mark><BR></center>
+<center>Boomer Male: <mark>=COUNTIFS(Test!$DN:$DN, 1, Test!$DM:$DM, ">57" ,Test!$DO:$DO, "US", Test!A:A, 1)/Data!$G$11</mark><BR></center>
+<center>Boomer Female: <mark>=COUNTIFS(Test!$DN:$DN, 2, Test!$DM:$DM, ">57" ,Test!$DO:$DO, "US", Test!A:A, 1)/Data!$G$12</mark><BR></center></h5>
+</h4>
+
+
+<h3 style="color:white">SubGroups_Male&Female_Responses<BR></h3>
+<h4 style="color:white">On the SubGroups_Male&Female_Responses sheet, there is percentage data that is being sourced from each of the Generation Response Sheets.<BR>
+You can see the questions and percentages can be found on the Generation Response Sheets, except on this sheet the data is Transposed so it can be easily digested all on one sheet.<BR> 
+To source the data I am using <mark>=INDEX(reference, [row], [column], MATCH(search_key, range, [search_type]))</mark><BR>
+To get the difference in response percentages, respective to each gender, I am using a formula that reads:<BR>
+
+<h5 style="color:white">
+<center>Difference in Male Yes Responses:<mark>=IF(F3 > B3, CONCATENATE(ROUND(ABS(F3-B3), 2)*100, "%", " ", "Favoring Boomer Males"), CONCATENATE(ROUND(ABS(F3-B3), 2)*100, "%", " ", "Favoring GenZ Males"))</mark><BR></center>
+<center>Difference in Male No Responses:<mark>=IF(G3 > C3, CONCATENATE(ROUND(ABS(G3-C3), 2)*100, "%", " ", "Favoring Boomer Males"), CONCATENATE(ROUND(ABS(G3-C3), 2)*100, "%", " ", "Favoring GenZ Males"))</mark><BR></center>
+<center>Difference in Female Yes Responses:<mark>=IF(H3 > D3, CONCATENATE(ROUND(ABS(H3-D3), 2)*100, "%", " ", "Favoring Boomer Females"), CONCATENATE(ROUND(ABS(H3-D3), 2)*100, "%", " ", "Favoring GenZ Females"))</mark><BR></center>
+<center>Difference in Female No Responses:<mark>=IF(I3 > E3, CONCATENATE(ROUND(ABS(I3-E3), 2)*100, "%", " ", "Favoring Boomer Females"), CONCATENATE(ROUND(ABS(I3-E3), 2)*100, "%", " ", "Favoring GenZ Females"))</mark><BR></center>
+</h5>
+
+<h4 style="color:white">The <mark>=CONCATENATE(string1, [string2, …])</mark> function allows me to bring together an integer output with a string output<BR>
+The string output is determined by a boolean logic outcome that the <mark>=IF(logical_expression, value_if_true, value_if_false)</mark> function is providing.<BR>
+</h4>
+
+<h3 style="color:white">SubGroup_Visualizations<BR></h3>
+
+<h4 style="color:white">This sheet visualizes the percentage diffrences in each gender's responses respective to their generations.<BR>
+I've featured a total of 8 pie charts and 2 questions. 4 pie charts for each question.<BR>
+Of course there are a lot more finds than the disparities between two questions. But for the sake of time, I only visualized two.<BR>
+The Boomer Female response to the question "Has your family always treated you right?" stood out like a sore thumb compared to the GenZ generation and their Boomer Male counterparts responses.<BR>
+Comparing Boomer Female responses to GenZ Female responses specifically, it is awesome to see a positive change.<BR>
+Could this change have be correlated with the establishment of Woman's rights and their "roles" in society?<BR>
+It would be interesting to note as a fact that society has a direct impact on families and their values.<BR>
+Moving on to the second question "Are you ever bothered by a feeling that things are not real?"<BR>
+Such a high percentage of the GenZ generation responded yes to this question, whereas most to all of the Boomer generation responded no.<BR>
+This is a depersonalization symptom which is often induced by stress, anxiety, sleep deprivation, or all of the above.<BR>
+If you go through the data on the SubGroups_Male&Female_Responses sheet, you will find that the GenZ generation has complications when sleeping compared to the Boomer generation.<BR>
+When asked "Do you usually sleep well" the responses were:<BR></h4>
+
+<h5 style="color:white"> <center>46.01% GenZ Males said No<BR></center>
+<center>53.21% GenZ Females said No<BR></center>
+<center>39.5% Boomer Males said No<BR></center>
+<center>37.1% Boomer Females said No<BR></center></h5>
+
+<h4 style="color:white">Maybe you could chalk that up to the modern day persuasive design of technology that has GenZ addicted to any and everything tech.</h4>
+
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+
+<html>
+<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Marvel&display=swap" rel="stylesheet">
+
+<head>
+	<meta name="viewport" content="width = device-width, initital-scale=1">
+	<title>Business</title>
+</head>
+
+<body bgcolor="000000">
+
+<nav>
+	<ul>
+		<li><a href="#">Portfolio 📁</a>
+			<ul>
+				<li><a href="rakimtr.html">Biography</a>
+				<li><a href="sports.html">Sports</a></li>
+				<li><a href="business.html">Business</a></li>
+				<li><a href="psychology.html">Psychology</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+<style>
+* {
+	margin: 0;
+	padding: 0;
+ }
+ 
+ul  { 
+
+ }
+ 
+ul li { 
+
+ }
+ 
+ul li a {
+		 text-decoration: none;
+
+ }
+
+nav {
+	width: 100%;
+	height: 60px;
+	background-color: #000000;
+
+ }
+
+nav p {
+	  
+	  font-size: 24px;
+	  line-height: 55px;
+	  float: left;
+	  padding: 0px 20px;
+	  
+ }
+
+nav ul { 
+	  
+	  float: left;
+ }
+
+nav ul li {
+	     float: left;
+	     list-style: none;
+		 position: relative;
+		   
+ } 
+ 
+nav ul li a {
+			 display: block;
+             color: #FFFFFF;
+			 font-size: 14px;
+			 padding: 22px 14px;
+			 text-decoration: none;
+			 
+ }
+
+nav ul li ul {
+              
+			  display: none; 
+			  position: absolute;
+			  background-color: #000000;
+			  padding: 10px;
+			  border-radius: 0px 0px 4px 4px;
+ }
+
+nav ul li:hover ul {
+			  display: block; 
+
+ } 
+
+nav ul li ul li {
+			  width: 180px
+			  border-radius: 4px;
+}
+
+
+nav ul li ul li a {
+			  padding: 8px 14px;
+}
+
+nav ul li ul li a:hover {
+              background-color: #000000;
+			
+ }
+ 
+
+a  {
+	font-family: righteous, cursive;
+
+}
+
+h1 {
+	font-size: 25px;
+	font-family: righteous, cursive;
+}
+
+h2 {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+iframe {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+h3 {
+	margin-top: 30px;
+	font-size: 15px;
+	font-family: righteous;
+	padding: 8px 14px;
+}
+
+h4 {
+	margin-top: 15px;
+	font-size: 15px;
+	font-family: calibri;
+	padding: 8px 14px
+}
+
+h5 {
+	margin-top: 15px;
+	font-size: 15px;
+	font-family: calibri;
+}
+
+p {
+	margin-top: 15px;
+	font-size: 30px;
+	font-family: righteous, cursive;
+}
+
+</style>
+
+
+<center><h2 style="color:white"><p>International Business Research 🔎</p><BR> 
+My International Marketing professor asked me to choose a country I thought an American brand would do well in.<BR>
+I chose Petsmart as the brand and Australia as the country and to my surprise there wasn't a lot of data to work with.<BR>
+But with enough research I was able to conjure up decent reasoning as to why Petsmart would succeed in Australia.<BR>
+For this project, I used google sheets and python as tools to help me get my point across.<BR>
+I will give a full breakdown of how I used these tools, then afterwards link the research paper.<BR>
+If you'd like, you can skip straight to the research paper linked at the end of the page.<BR></h2></center>
+
+<iframe src="https://docs.google.com/spreadsheets/d/1E5h7nwRUg-QV_YeIWU_omF4Pbt7jcraf-BHH3IQCuHU/edit?usp=sharing" frameborder="0" width="100%" height="630"></iframe>
+
+
+<h3 style="color:white">Petsmart_Products<BR></h3>
+<h4 style="color:white">On the Petsmart_Products sheet, I used kaggle.com to find and download a Petsmart retail product dataset in the form of a csv file.<BR>
+I then inserted that file onto the sheet, cleaned the dataset, and created the column "Animal Type."<BR> 
+The "Animal Type" column was created using functions <mark>=SPLIT(text, delimiter, [split_by_each], [remove_empty_text])</mark>, to seperate the contents that make up the "Item Description" values, and <mark>=FIND(search_for, text_to_search, [starting_at])</mark> to find the key animal names among the split values.<BR>
+These formulas arent on display, due to having to copy and paste as values in order to filter them.<BR>
+The pie chart you see here will be featured in the research report.<BR></h4>
+
+
+<h3 style="color:white">Aussie_Ownership<BR></h3>
+<h4 style="color:white">On the Aussie_Ownership sheet, there is pet ownership data being sourced from a national australian survey held by Newgate Research.<BR>
+This data was extracted using the Get Data from PDF macro on Excel, then pasted into this sheet.<BR>
+I was then able to create a bar chart, reflecting the data.<BR>
+This bar chart will be featured in the research report.</h4>
+
+<h3 style="color:white">Pet_Expenses<BR></h3>
+<h4 style="color:white">On the Pet_Expenses sheet, I am sourcing data from the same PDF file as the Aussie_Ownership sheet is sourcing from.<BR>
+This data consists of the annual expenses of Australian pet owners by category.<BR>
+To understand it a bit easier, I've created a bar chart for this data table as well.<BR>
+The bar chart will be seen in the research report.</h4>
+
+
+<h3 style="color:white">Correlation<BR></h3>
+<h4 style="color:white">On the Correlation sheet, there is data that is being sourced from the World Happiness Report.<BR>
+I downloaded the data right from their website worldhappiness.report. It consists of each countries Happiness score, filled with categorical data that is believed to be what constitutes happiness.<BR> 
+I was able to find the significant and positive correlation between Social Support and Happiness by creating a scatter plot using both of those variables' respective columns.<BR>
+This chart will be seen in the research report.</h4>
+
+<h3 style="color:white">Research Report<BR></h3>
+
+<h4 style="color:white">All of the data I cleaned, analyzed, and visualized in the Petsmart Australia workbook was organized and put together to create the Research Report you see below.<BR>
+The slides are here for you to have a more visual experience when reading the report.<BR>
+I feature PetBarn locations, which would theoretically be Petsmart's competitor.<BR>
+Also in slides 7 and 8, I feature a couple of lines of python code used to create bar charts from a South Australian Dog Owner dataset sourced from kaggle.com<BR>
+The first line of python code <mark>df.groupby("Region")["Animal_Type"].value_counts().sort_values().plot("bar")</mark> computes a bar chart for the top regions of Australia with dog owners.<BR> 
+The second line of python code <mark>df.groupby("Suburb")["Animal_Type"].value_counts().sort_values().tail().plot("bar")</mark> dives a tad deeper computing a bar chart for the top suburbs of Australia with dog owners.<BR>
+Of course, this can all be found in the report below.<BR></h4>
+
+<iframe src="https://docs.google.com/document/d/1b2WS29UkqIOSuPaccfKq3JiYH00sXsNUEpfANctVfRk/edit" frameborder="0" width="100%" height="630"></iframe>
+
+<iframe align=right src="https://docs.google.com/presentation/d/1VIuBEAeTVXX01lFIL6dOt3YOZk-hx1hLxke7LxYrcaU/edit#slide=id.p" frameborder="0" width= "100%" height="630"></iframe>
+
+
+</body>
+
+</html>
